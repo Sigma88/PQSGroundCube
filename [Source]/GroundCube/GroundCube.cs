@@ -9,6 +9,8 @@ namespace PQSMod_GroundCube
 {
     public class PQSMod_GroundCube : PQSMod
     {
+        public bool scaleDeformityByRadius = true;
+        public double deformity = 1;
         public double radius = 1;
         public double power = 1;
         public bool moveCorner = false;
@@ -32,7 +34,7 @@ namespace PQSMod_GroundCube
             y /= max;
             z /= max;
 
-            data.vertHeight = sphere.radius * radius * UtilMath.LerpUnclamped(1, Math.Pow(x * x + y * y + z * z, 0.5), power);
+            data.vertHeight += (sphere.radius * radius * UtilMath.LerpUnclamped(1, Math.Pow(x * x + y * y + z * z, 0.5), power) - sphere.radius) * deformity;
         }
     }
 
@@ -40,7 +42,7 @@ namespace PQSMod_GroundCube
     public class GroundCube : ModLoader<PQSMod_GroundCube>
     {
         [ParserTarget("radius", optional = true)]
-        private NumericParser<double> altitude
+        private NumericParser<double> radius
         {
             get { return mod.radius; }
             set { mod.radius = value; }
@@ -86,7 +88,7 @@ namespace PQSMod_GroundCube
     {
         void Awake()
         {
-            Debug.Log("[SigmaLog] Version Check:   PQSMod_GroundCube v0.1.0");
+            Debug.Log("[SigmaLog] Version Check:   PQSMod_GroundCube v0.2.0");
         }
     }
 }
