@@ -34,7 +34,7 @@ namespace PQSMod_GroundCube
             y /= max;
             z /= max;
 
-            data.vertHeight += (sphere.radius * radius * UtilMath.LerpUnclamped(1, Math.Pow(x * x + y * y + z * z, 0.5), power) - sphere.radius) * deformity;
+            data.vertHeight += sphere.radius * deformity * ((UtilMath.LerpUnclamped(1, Math.Pow(x * x + y * y + z * z, 0.5), power) * radius) - 1);
         }
     }
 
