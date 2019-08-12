@@ -43,19 +43,19 @@
   <ItemGroup>
     <Reference Include="Assembly-CSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\[References]\KerbalSpaceProgram\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\..\[References]\KerbalSpaceProgram\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Kopernicus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\[References]\Kopernicus\Kopernicus.dll</HintPath>
+      <HintPath>..\..\..\..\..\[References]\Kopernicus\Kopernicus.dll</HintPath>
     </Reference>
     <Reference Include="Kopernicus.Parser">
-      <HintPath>..\..\..\[References]\Kopernicus\Kopernicus.Parser.dll</HintPath>
+      <HintPath>..\..\..\..\..\[References]\Kopernicus\Kopernicus.Parser.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\[References]\KerbalSpaceProgram\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\..\[References]\KerbalSpaceProgram\UnityEngine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

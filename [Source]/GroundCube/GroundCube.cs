@@ -1,8 +1,10 @@
 ﻿using System;
 using UnityEngine;
-using Kopernicus;
-using Kopernicus.Configuration;
+using Kopernicus.ConfigParser.Attributes;
+using Kopernicus.ConfigParser.BuiltinTypeParsers;
+using Kopernicus.ConfigParser.Enumerations;
 using Kopernicus.Configuration.ModLoader;
+using Kopernicus.Configuration.Parsing;
 
 
 namespace PQSMod_GroundCube
@@ -41,45 +43,45 @@ namespace PQSMod_GroundCube
     [RequireConfigType(ConfigType.Node)]
     public class GroundCube : ModLoader<PQSMod_GroundCube>
     {
-        [ParserTarget("radius", optional = true)]
+        [ParserTarget("radius", Optional = true)]
         private NumericParser<double> radius
         {
-            get { return mod.radius; }
-            set { mod.radius = value; }
+            get { return Mod.radius; }
+            set { Mod.radius = value; }
         }
 
-        [ParserTarget("power", optional = true)]
+        [ParserTarget("power", Optional = true)]
         private NumericParser<double> power
         {
-            get { return mod.power; }
-            set { mod.power = value; }
+            get { return Mod.power; }
+            set { Mod.power = value; }
         }
 
-        [ParserTarget("moveCorner", optional = true)]
+        [ParserTarget("moveCorner", Optional = true)]
         private NumericParser<bool> moveCorner
         {
-            get { return mod.moveCorner; }
-            set { mod.moveCorner = value; }
+            get { return Mod.moveCorner; }
+            set { Mod.moveCorner = value; }
         }
 
-        [ParserTarget("angle", optional = true)]
+        [ParserTarget("angle", Optional = true)]
         private NumericParser<float> angle
         {
-            get { return mod.angle; }
-            set { mod.angle = value; }
+            get { return Mod.angle; }
+            set { Mod.angle = value; }
         }
 
         [ParserTarget("position")]
         public Vector3Parser position
         {
-            get { return mod.position; }
-            set { mod.position = value; }
+            get { return Mod.position; }
+            set { Mod.position = value; }
         }
 
         [ParserTarget("Position")]
         public PositionParser Position
         {
-            set { mod.position = value; }
+            set { Mod.position = value; }
         }
     }
 
